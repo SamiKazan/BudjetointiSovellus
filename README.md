@@ -4,4 +4,4 @@
 <br>
 <p>Budjetointisovelluksessa asetetaan tulot ja kaikki menot lajiteltuna(laskut, harrastukset, yms)</p>
 <br>
-<a href"https://github.com/SamiKazan/Ohjelmistotekniikka/tree/master/laskarit">Laskarit</a>
+[Laskarit](https://github.com/SamiKazan/Ohjelmistotekniikka/tree/master/laskarit)
