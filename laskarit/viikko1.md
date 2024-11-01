@@ -1,0 +1,1 @@
+komentorivi ja versiohallinta ovat jo tuttuja.
