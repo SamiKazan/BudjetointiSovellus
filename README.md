@@ -6,3 +6,5 @@
 
 [Laskarit](https://github.com/SamiKazan/Ohjelmistotekniikka/tree/master/laskarit)  
 
+[Vaatimusmäärittely]([https://github.com/SamiKazan/Ohjelmistotekniikka/tree/master/laskarit](https://github.com/SamiKazan/Ohjelmistotekniikka/blob/master/dokumentaatio/vaatimusmaatittely.md))  
+
