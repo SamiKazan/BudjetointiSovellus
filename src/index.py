@@ -1,5 +1,14 @@
+from tkinter import Tk
+from ui.ui import UI
+
 def main():
-    print("need to make ui")
+    window = Tk()
+    window.title("Budgeting app")
+
+    show_ui = UI(window)
+    show_ui.start()
+
+    window.mainloop()
 
 if __name__ == "__main__":
     main()
