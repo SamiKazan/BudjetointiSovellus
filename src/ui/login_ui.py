@@ -1,6 +1,7 @@
 from tkinter import ttk, StringVar, constants
 from services.main_service import budgeting_service
 
+
 class LoginUI:
     def __init__(self, root, handle_login, handle_show_create_account_UI):
         self.root = root
@@ -50,13 +51,14 @@ class LoginUI:
         self.username_input()
         self.password_input()
 
-        #tehty github copilotilla
-        login_button = ttk.Button(self.frame, text="Login", command=self.login_handler)
+        # tehty github copilotilla
+        login_button = ttk.Button(
+            self.frame, text="Login", command=self.login_handler)
         login_button.grid(padx=5, pady=5, sticky=constants.EW)
-    
-        create_user_button = ttk.Button(master=self.frame, text="Dont have Account? Create one here",
-        command=self.handle_show_create_account_UI)
-        create_user_button.grid(padx=5, pady=5, sticky=constants.EW)
-        #loppuu
 
-        self.frame.grid_columnconfigure(0, weight=2, minsize=600)
+        create_user_button = ttk.Button(master=self.frame, text="Dont have Account? Create one here",
+                                        command=self.handle_show_create_account_UI)
+        create_user_button.grid(padx=5, pady=5, sticky=constants.EW)
+        # loppuu
+
+        self.frame.grid_columnconfigure(0, weight=2, minsize=800)

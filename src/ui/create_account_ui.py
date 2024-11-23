@@ -1,6 +1,7 @@
 from tkinter import ttk, StringVar, constants
 from services.main_service import budgeting_service
 
+
 class CreateaccountUI:
     def __init__(self, root, handle_create_user, handle_show_login_UI):
         self.root = root
@@ -26,7 +27,7 @@ class CreateaccountUI:
             raise KeyError("Username must be atleast 3 characters long")
         if len(password) < 5:
             raise KeyError("Password must be atleast 5 characters long")
-            
+
         try:
             budgeting_service.create_account(username, password)
             self.handle_create_user()
@@ -54,9 +55,10 @@ class CreateaccountUI:
 
         self.username_input()
         self.password_input()
-    
+
+        # kysyin copilotilta miten saan yhdelle napille monta komentoa
         create_user_button = ttk.Button(master=self.frame, text="Create user",
-        command=self.creation_handler)
+                                        command=lambda: [self.creation_handler(), self.handle_show_login_UI()])
         create_user_button.grid(padx=5, pady=5, sticky=constants.EW)
 
         self.frame.grid_columnconfigure(0, weight=2, minsize=600)

@@ -12,20 +12,18 @@ class BudgetingService:
         self.user = None
         self.user_repo = user_repo
 
-
     def create_account(self, username, password):
         """Creates new account"""
 
         user_exists = self.user_repo.find(username)
 
         if user_exists:
-            raise ValueError ("Username already in use mainservice")
+            raise ValueError("Username already in use mainservice")
 
         user = self.user_repo.create_account(Users(username, password))
-        self.user = user
+
         print("mainservice menee läpi")
         return user
-    
 
     def login(self, username, password):
         """Logs user into app"""
@@ -38,7 +36,6 @@ class BudgetingService:
         self.user = user
         print("pääsit jotenkin sisään")
         return user
-
 
     def logout(self):
         self.user = None
