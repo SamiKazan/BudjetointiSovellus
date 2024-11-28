@@ -22,7 +22,7 @@ class BudgetingService:
 
         user = self.user_repo.create_account(Users(username, password))
 
-        print("mainservice menee läpi")
+        print("User created (Main)")
         return user
 
     def login(self, username, password):
@@ -32,9 +32,10 @@ class BudgetingService:
 
         if not user or password != user.password:
             print("invalid username or password")
+            return None
 
         self.user = user
-        print("pääsit jotenkin sisään")
+        print("Logged in as",self.user,"(Main)")
         return user
 
     def logout(self):

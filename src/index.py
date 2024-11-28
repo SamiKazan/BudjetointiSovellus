@@ -1,7 +1,9 @@
 from tkinter import Tk
 from ui.ui import UI
 
-
+#VIIKKO 5 tee pääsivu, sille DB ja muut toiminnallisuudet
+#VIIKKO 6 error messaget näkyville.
+#VIIKKO 7 bugfixaus
 def main():
     window = Tk()
     window.title("Budgeting app")

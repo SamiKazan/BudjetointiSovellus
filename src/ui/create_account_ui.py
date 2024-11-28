@@ -32,7 +32,7 @@ class CreateaccountUI:
             budgeting_service.create_account(username, password)
             self.handle_create_user()
         except:
-            print("ui menee jumiin")
+            print("Failed to create account (UI)")
 
     def username_input(self):
         label = ttk.Label(master=self.frame, text="Username")
@@ -58,7 +58,11 @@ class CreateaccountUI:
 
         # kysyin copilotilta miten saan yhdelle napille monta komentoa
         create_user_button = ttk.Button(master=self.frame, text="Create user",
-                                        command=lambda: [self.creation_handler(), self.handle_show_login_UI()])
+                                        command=lambda: [self.creation_handler(), self.handle_create_user()])
         create_user_button.grid(padx=5, pady=5, sticky=constants.EW)
+
+        cancel_button = ttk.Button(master=self.frame, text="Cancel",
+                                   command=self.handle_show_login_UI)
+        cancel_button.grid(padx=5, pady=5, sticky=constants.EW)
 
         self.frame.grid_columnconfigure(0, weight=2, minsize=600)

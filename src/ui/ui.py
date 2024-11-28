@@ -1,5 +1,6 @@
 from ui.login_ui import LoginUI
 from ui.create_account_ui import CreateaccountUI
+from ui.budgeting_ui import BudgetingUI
 
 
 class UI:
@@ -18,11 +19,16 @@ class UI:
     def show_login_page(self):
         self.hide_current_page()
         self.current_page = LoginUI(
-            self.root, None, self.show_create_account_page)
+            self.root, self.show_budgeting_page, self.show_create_account_page)
         self.current_page.show()
 
     def show_create_account_page(self):
         self.hide_current_page()
         self.current_page = CreateaccountUI(
-            self.root, None, self.show_login_page)
+            self.root, self.show_budgeting_page, self.show_login_page)
+        self.current_page.show()
+
+    def show_budgeting_page(self):
+        self.hide_current_page()
+        self.current_page = BudgetingUI(self.root, self.show_login_page)
         self.current_page.show()
