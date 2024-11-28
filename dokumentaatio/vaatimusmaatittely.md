@@ -18,10 +18,10 @@ Sovelluksella käyttäjä on mahdollista pitää kirjaa tuloistaan ja menoistaan
  - Käyttäjä voi luoda uuden tulo-meno seurontoja
    - Näkyy vain kyseisellä käyttäjällä
 - Käyttäjä voi poistaa meno-tulo seurantoja
-- Käyttäjä voi muokata tai lisätä meno-tulo seurantoja
 - Käyttäjä voi kirjautua ulos
 
   ## Jatkokehitysideoita
 
   - Käyttäjätunnuksen poisto
   - julkinen meno-tulo seuranta
+  - Käyttäjä voi muokata meno-tulo seurantoja
