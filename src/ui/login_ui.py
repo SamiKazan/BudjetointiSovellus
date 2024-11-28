@@ -27,7 +27,8 @@ class LoginUI:
             budgeting_service.login(username, password)
             self.handle_login()
         except:
-            print("wrong username or password")
+            print("wrong username or password (UI)")
+            self.handle_show_create_account_UI
 
     def username_input(self):
         label = ttk.Label(master=self.frame, text="Username")
