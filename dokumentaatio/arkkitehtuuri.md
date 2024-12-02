@@ -21,3 +21,6 @@ Sovelluksen loogisen tietomallin muodostavat luokat Budgetingservice ja User, jo
           expenses
       }
 ```
+
+Pakkauskaavio
+![image](https://github.com/user-attachments/assets/65508fd2-fba1-427b-be41-e56b60d3e8b7)
