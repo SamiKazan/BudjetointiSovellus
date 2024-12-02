@@ -14,6 +14,8 @@
 
 [changelog](https://github.com/SamiKazan/Ohjelmistotekniikka/blob/master/dokumentaatio/changelog.md)
 
+[Viikon 5 release](https://github.com/SamiKazan/Ohjelmistotekniikka/releases/tag/viikko5)
+
 
 ## Asennus
 
