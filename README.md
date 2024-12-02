@@ -45,3 +45,15 @@ Ohjelman testaus:
 Ohjelman testikattavuusraportti:
 
     poetry run invoke coverage-report
+
+Ohjelman alustus:
+
+    poetry run invoke build
+
+Ohjelman pylint tarkistus:
+
+    poetry run invoke lint
+
+Ohjelman koodin formatointiin:
+
+    poetry run invoke format
