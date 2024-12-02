@@ -7,8 +7,8 @@
 | 22.11 | 6    | login ja create_account ui toteutus
 | 23.11 | 3    | testausta, arkkitehtuuri tiedoston luonti
 | 28.11 | 6    | budget_repo, budget_ui, create_budget_ui
+|  2.12 | 4    | budget_repo testit, pakkauskaavio
 |       | -    | 
 |       | -    | 
 |       | -    | 
-|       | -    | 
-| yht   | 21   | | 
+| yht   | 25   | | 

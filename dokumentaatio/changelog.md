@@ -10,3 +10,10 @@
 - Lisätty hieman budgetservice luokkaa
 - Testattu, että budget servicen nykyiset funktiot toimivat
 - Alkeellinen käyttöliittymä tehty
+
+## Viikko 5
+
+- Sisäänkirjautumisen jälkeinen sivu tehty
+- uuden budjetin tekemis sivu tehty
+- budget_repo tehty
+- Testattu, että budget_repo nykyiset funktiot toimivat
