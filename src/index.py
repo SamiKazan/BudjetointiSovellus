@@ -1,9 +1,12 @@
 from tkinter import Tk
 from ui.ui import UI
 
-#VIIKKO 5 tee pääsivu, sille DB ja muut toiminnallisuudet
-#VIIKKO 6 error messaget näkyville.
-#VIIKKO 7 bugfixaus
+# Login ei toimi kunnolla(tyhjä ruutu vaikka oikeat tiedot)
+# create_account päästää appiin vaikka username on jo otettu
+# VIIKKO 6 error messaget, poista budgetti,
+# näkee budgetin kaikki tiedot(uusi ikkuna), laskee paljon jäljellä
+
+
 def main():
     window = Tk()
     window.title("Budgeting app")

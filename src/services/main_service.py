@@ -41,7 +41,7 @@ class BudgetingService:
             return None
 
         self.user = user
-        print("Logged in as",self.user,"(Main)")
+        print("Logged in as", self.user, "(Main)")
         return user
 
     def logout(self):
@@ -52,13 +52,15 @@ class BudgetingService:
         if not self.user:
             print("No user logged in")
             return None
-        
+
         budget = self.budget_repo.create_budget(Budgets(self.user.username, content["name"],
-            content["income"], content["rent"], content["groceries"], content["hobbies"], content["misc"]))
-        
+                                                        content["income"], content["rent"],
+                                                        content["groceries"], content["hobbies"],
+                                                        content["misc"]))
+
         print("Budget created (Main)")
         return budget
-    
+
     def get_budgets(self):
         """Gets users budgets"""
         if not self.user:
@@ -67,5 +69,6 @@ class BudgetingService:
         budgets = self.budget_repo.find_budgets(self.user.username)
 
         return list(budgets)
+
 
 budgeting_service = BudgetingService()

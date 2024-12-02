@@ -47,13 +47,13 @@ class BudgetingUI:
             sticky=constants.EW
         )
         new_budget_button = ttk.Button(master=self.frame, text="Create new budget",
-                                        command=self.handle_new_budget)
-        
+                                       command=self.handle_new_budget)
+
         new_budget_button.grid(padx=5, pady=5, sticky=constants.E)
 
         logout_button = ttk.Button(master=self.frame, text="Logout",
-                                        command=self.logout_handler)
-        
+                                   command=self.logout_handler)
+
         logout_button.grid(padx=5, pady=5, sticky=constants.E)
 
         self.frame.grid_columnconfigure(0, weight=2, minsize=1000)
@@ -67,8 +67,8 @@ class BudgetingListUI:
 
         self.initialize()
 
-    #Lisää VIEW nappi (näyttää kaikki tiedot)
-    #Lisää DELETE nappi
+    # Lisää VIEW nappi (näyttää kaikki tiedot)
+    # Lisää DELETE nappi
 
     def show(self):
         self.frame.pack(fill=constants.X)

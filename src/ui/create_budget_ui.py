@@ -1,6 +1,7 @@
 from tkinter import ttk, StringVar, constants
 from services.main_service import budgeting_service
 
+
 class CreateBudgetUI:
     def __init__(self, root, handle_create_budget):
         self.root = root
@@ -48,7 +49,7 @@ class CreateBudgetUI:
         label.grid(padx=5, pady=5, sticky=constants.W)
         self.enter_name.grid(padx=5, pady=5, sticky=constants.EW)
 
-    #Tuotettu github copilotilla
+    # Tuotettu github copilotilla
     def income_input(self):
         label = ttk.Label(master=self.frame, text="Income")
         self.enter_income = ttk.Entry(master=self.frame)
@@ -78,7 +79,7 @@ class CreateBudgetUI:
         self.enter_misc = ttk.Entry(master=self.frame)
         label.grid(padx=5, pady=5, sticky=constants.W)
         self.enter_misc.grid(padx=5, pady=5, sticky=constants.EW)
-    #loppuu
+    # loppuu
 
     def initialize(self):
         self.frame = ttk.Frame(master=self.root)
@@ -90,7 +91,8 @@ class CreateBudgetUI:
         self.hobbies_input()
         self.misc_input()
 
-        button = ttk.Button(master=self.frame, text="Create Budget", command=self.create_budget_handler)
+        button = ttk.Button(
+            master=self.frame, text="Create Budget", command=self.create_budget_handler)
         button.grid(padx=5, pady=5, sticky=constants.EW)
 
         cancel_button = ttk.Button(master=self.frame, text="Cancel",

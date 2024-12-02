@@ -1,5 +1,6 @@
 import uuid
 
+
 class Budgets:
     def __init__(self, user, name, income, rent, groceries, hobbies, misc):
         self.user = user
@@ -10,4 +11,3 @@ class Budgets:
         self.groceries = groceries
         self.hobbies = hobbies
         self.misc = misc
-        
