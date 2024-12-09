@@ -8,7 +8,7 @@
 | 23.11 | 3    | testausta, arkkitehtuuri tiedoston luonti
 | 28.11 | 6    | budget_repo, budget_ui, create_budget_ui
 |  2.12 | 4    | budget_repo testit, pakkauskaavio
+|  9.12 | 7    | login sekvenssikaavio, budget_details näkymä, bugfix, delete_budget
 |       | -    | 
 |       | -    | 
-|       | -    | 
-| yht   | 25   | | 
+| yht   | 32   | | 

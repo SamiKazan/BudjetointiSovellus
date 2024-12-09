@@ -1,7 +1,6 @@
 from tkinter import Tk
 from ui.ui import UI
 
-# sekvenssikaavio
 # VIIKKO 7 error messaget, tietoturva/salaus, loput testit
 
 def main():
