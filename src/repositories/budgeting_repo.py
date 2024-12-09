@@ -40,6 +40,10 @@ class BudgetingRepository:
             budgets.append(budget)
         return budgets
         # loppuu
-
+    
+    def delete_budget(self, budget_id):
+        d_b = self.connection.cursor()
+        d_b.execute("delete from budgets where id = ?", (budget_id,))
+        self.connection.commit()
 
 budget_repository = BudgetingRepository(get_database_connection())

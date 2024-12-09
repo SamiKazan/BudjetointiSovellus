@@ -28,9 +28,13 @@ class BudgetingUI:
             self.budget_list_UI.close()
         budgets = budgeting_service.get_budgets()
 
+        def refresh_on_delete():
+            self.initialize_budgets()
+
         self.budget_list_UI = BudgetingListUI(
             self.budget_list_frame,
-            budgets
+            budgets,
+            refresh_on_delete
         )
         self.budget_list_UI.show()
 
@@ -60,15 +64,18 @@ class BudgetingUI:
 
 
 class BudgetingListUI:
-    def __init__(self, root, budgets):
+    def __init__(self, root, budgets, refresh_on_delete):
         self.root = root
         self.budgets = budgets
         self.frame = None
+        self.refresh = refresh_on_delete
 
         self.initialize()
 
     # Lisää VIEW nappi (näyttää kaikki tiedot)
-    # Lisää DELETE nappi
+    def deletion_handler(self, budget_id):
+        budgeting_service.delete_budget(budget_id)
+        self.refresh()
 
     def show(self):
         self.frame.pack(fill=constants.X)
@@ -82,8 +89,12 @@ class BudgetingListUI:
 
         label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
 
+        delete_button = ttk.Button(master=self.frame, text="Delete",
+                   command=lambda: self.deletion_handler(budget.id))
+        delete_button.grid(row=0, column=1, padx=5, pady=5, sticky=constants.E)
+
         item_frame.grid_columnconfigure(0, weight=1)
-        item_frame.pack(fill=constants.X)
+        item_frame.grid(row=self.budgets.index(budget), column=0, padx=5, pady=5, sticky=constants.EW)
 
     def initialize(self):
         self.frame = ttk.Frame(master=self.root)

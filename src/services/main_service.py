@@ -70,6 +70,13 @@ class BudgetingService:
         budgets = self.budget_repo.find_budgets(self.user.username)
 
         return list(budgets)
+    
+    def delete_budget(self, budget_id):
+        if not self.user:
+            return
+        
+        self.budget_repo.delete_budget(budget_id)
+        print("deleted success")
 
 
 budgeting_service = BudgetingService()

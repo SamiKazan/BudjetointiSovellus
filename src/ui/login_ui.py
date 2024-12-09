@@ -23,12 +23,12 @@ class LoginUI:
         username = self.enter_username.get()
         password = self.enter_password.get()
 
-        try:
-            budgeting_service.login(username, password)
+        user = budgeting_service.login(username, password)
+        
+        if user != None:
             self.handle_login()
-        except:
+        else:
             print("wrong username or password (UI)")
-            self.handle_show_create_account_UI
 
     def username_input(self):
         label = ttk.Label(master=self.frame, text="Username")

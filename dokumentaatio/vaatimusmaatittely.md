@@ -8,16 +8,16 @@ Sovelluksella käyttäjä on mahdollista pitää kirjaa tuloistaan ja menoistaan
 
 ### ennen kirjautumista
 - Käyttäjä voi luoda tunnukset (tehty)
-    - Käyttäjätunnus täytyy olla uniikki ja vähintään 3 merkkiä ja salasana 5 (tehty)(bugi)
+    - Käyttäjätunnus täytyy olla uniikki ja vähintään 3 merkkiä ja salasana 5 (tehty)
 - Käyttäjä voi kirjautua sisään (tehty)
     - Jos käyttäjätunnus tai salasana väärin tulee virheilmoitus
-    - Onnistunut sisäänkirjautuminen, jos käyttäjtunnus ja salasana täsmää. (tehty)(bugi)
+    - Onnistunut sisäänkirjautuminen, jos käyttäjtunnus ja salasana täsmää. (tehty)
 
  ### kun on kirjautunut
  - Käyttäjä näkee aiempiea tulo-meno seurantoja (tehty)
  - Käyttäjä voi luoda uuden tulo-meno seurontoja (tehty)
    - Näkyy vain kyseisellä käyttäjällä (tehty)
-- Käyttäjä voi poistaa meno-tulo seurantoja
+- Käyttäjä voi poistaa meno-tulo seurantoja (tehty)
 - Käyttäjä voi kirjautua ulos (tehty)
 
   ## Jatkokehitysideoita
