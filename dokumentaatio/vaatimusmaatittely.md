@@ -11,7 +11,7 @@ Sovelluksella käyttäjä on mahdollista pitää kirjaa tuloistaan ja menoistaan
     - Käyttäjätunnus täytyy olla uniikki ja vähintään 3 merkkiä ja salasana 5 (tehty)(bugi)
 - Käyttäjä voi kirjautua sisään (tehty)
     - Jos käyttäjätunnus tai salasana väärin tulee virheilmoitus
-    - Onnistunut sisäänkirjautuminen, jos käyttäjtunnus ja salasana täsmää. (bugi)
+    - Onnistunut sisäänkirjautuminen, jos käyttäjtunnus ja salasana täsmää. (tehty)(bugi)
 
  ### kun on kirjautunut
  - Käyttäjä näkee aiempiea tulo-meno seurantoja (tehty)

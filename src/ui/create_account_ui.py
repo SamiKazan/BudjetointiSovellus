@@ -28,10 +28,11 @@ class CreateaccountUI:
         if len(password) < 5:
             raise KeyError("Password must be atleast 5 characters long")
 
-        try:
-            budgeting_service.create_account(username, password)
+        user = budgeting_service.create_account(username, password)
+
+        if user:
             self.handle_create_user()
-        except:
+        else:
             print("Failed to create account (UI)")
 
     def username_input(self):
@@ -58,7 +59,7 @@ class CreateaccountUI:
 
         # kysyin copilotilta miten saan yhdelle napille monta komentoa
         create_user_button = ttk.Button(master=self.frame, text="Create user",
-                                        command=lambda: [self.creation_handler(), self.handle_create_user()])
+                                        command= self.creation_handler)
         create_user_button.grid(padx=5, pady=5, sticky=constants.EW)
 
         cancel_button = ttk.Button(master=self.frame, text="Cancel",

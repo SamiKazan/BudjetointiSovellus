@@ -1,11 +1,8 @@
 from tkinter import Tk
 from ui.ui import UI
 
-# Login ei toimi kunnolla(tyhjä ruutu vaikka oikeat tiedot)
-# create_account päästää appiin vaikka username on jo otettu
-# VIIKKO 6 error messaget, poista budgetti,
+# VIIKKO 6 error messaget, poista budgetti, docstring
 # näkee budgetin kaikki tiedot(uusi ikkuna), laskee paljon jäljellä
-
 
 def main():
     window = Tk()
@@ -15,7 +12,6 @@ def main():
     show_ui.start()
 
     window.mainloop()
-
 
 if __name__ == "__main__":
     main()

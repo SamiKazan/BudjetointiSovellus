@@ -22,8 +22,9 @@ class BudgetingService:
         user_exists = self.user_repo.find(username)
 
         if user_exists:
-            raise ValueError("Username already in use (Main)")
-
+            print("Username already in use (Main)")
+            return None
+            
         user = self.user_repo.create_account(Users(username, password))
 
         self.user = user
@@ -41,7 +42,7 @@ class BudgetingService:
             return None
 
         self.user = user
-        print("Logged in as", self.user, "(Main)")
+        print("Logged in as", self.user.username, "(Main)")
         return user
 
     def logout(self):
