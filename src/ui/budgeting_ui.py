@@ -3,7 +3,22 @@ from services.main_service import budgeting_service
 
 
 class BudgetingUI:
+    """User interface for showing budgets
+    """
     def __init__(self, root, handle_logout, handle_new_budget, handle_view_details):
+        """Class constructor, creates budget page view
+
+        Args:
+            root:
+                TKinter-element, page view initialization
+            handle_logout:
+                callable, returns to login page, logs user out
+            handle_new_budget:
+                callable, opens create_budget page
+            handle_view_details:
+                callable, opens view_budget_details page, passed to other class
+        """
+
         self.root = root
         self.frame = None
         self.handle_logout = handle_logout
@@ -64,7 +79,20 @@ class BudgetingUI:
 
 
 class BudgetingListUI:
+    """User interface for showing list of budgets"""
     def __init__(self, root, budgets, refresh_on_delete, handle_view_details):
+        """Class constructor creates list of budgets
+
+        Args:
+            root:
+                TKinter-element, page view initialization
+            budgets:
+                list, list of budgets
+            refresh_on_delete:
+                callable, refreshes page on call
+            handle_view_details:
+                callable, opens view_budget_details page for specific budget
+        """
         self.root = root
         self.budgets = budgets
         self.frame = None

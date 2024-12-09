@@ -3,7 +3,16 @@ from services.main_service import budgeting_service
 
 
 class CreateBudgetUI:
+    """user interface for budget creation page"""
     def __init__(self, root, handle_create_budget):
+        """Class constructor, creates newbudget page
+
+        Args:
+            root:
+                TKinter-element, page view initialization
+            handle_create_budget:
+                callable, creates new budget on call. gets unique id
+        """
         self.root = root
         self.frame = None
         self.handle_create_budget = handle_create_budget

@@ -17,3 +17,12 @@
 - uuden budjetin tekemis sivu tehty
 - budget_repo tehty
 - Testattu, että budget_repo nykyiset funktiot toimivat
+
+## Viikko 6
+
+- Login, createaccount bugfix
+- Budgetin yksityiskohtien näkymä
+- Budgetin poisto toiminnallisuus
+- Budgetin poisto testi
+- docstring
+- sekvenssikaavio

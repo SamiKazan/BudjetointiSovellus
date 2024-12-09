@@ -1,8 +1,8 @@
 from tkinter import Tk
 from ui.ui import UI
 
-# VIIKKO 6 docstring, sekvenssikaavio
-# VIIKKO 7 error messaget, tietoturva/salaus, difference värinvaihto, loput
+# sekvenssikaavio
+# VIIKKO 7 error messaget, tietoturva/salaus, loput testit
 
 def main():
     window = Tk()

@@ -3,7 +3,19 @@ from services.main_service import budgeting_service
 
 
 class LoginUI:
+    """user interface for logging in
+    """
     def __init__(self, root, handle_login, handle_show_create_account_UI):
+        """Class construcotr creats login page
+
+        Args:
+            root:
+                TKinter-element, page view initialization
+            handle_login:
+                callable, called when trying to login
+            handle_show_create_account_UI:
+                callable, shows create_account page on call
+        """
         self.root = root
         self.handle_login = handle_login
         self.handle_show_create_account_UI = handle_show_create_account_UI

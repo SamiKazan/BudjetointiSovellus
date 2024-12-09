@@ -3,7 +3,19 @@ from services.main_service import budgeting_service
 
 
 class ViewBudgetDetailsUI:
-    def __init__(self, root, budget ,handle_close_page):
+    """User interface for budget details
+    """
+    def __init__(self, root, budget, handle_close_page):
+        """Class constructor. creates budget details page
+
+        Args:
+            root:
+                TKinter-element, container for page view
+            budget:
+                Budgets class, contains budget details
+            handle_close_page:
+                callable, returns to main app page on call
+        """
         self.root = root
         self.frame = None
         self.budget = budget

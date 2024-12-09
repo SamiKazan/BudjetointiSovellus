@@ -3,10 +3,23 @@ from database_connection import get_database_connection
 
 
 class BudgetingRepository:
+    """
+    Class for database related budget to operations
+    """
     def __init__(self, connection):
+        """Class constructor
+
+        ARGS:
+            connection: Connection to databse
+        """
         self.connection = connection
 
     def create_budget(self, budget):
+        """Creates new budget for user
+
+        Args:
+            budget: An instance of the Budget class containing the budget details.
+        """
         d_b = self.connection.cursor()
 
         d_b.execute("""
@@ -20,6 +33,14 @@ class BudgetingRepository:
         self.connection.commit()
 
     def find_budgets(self, user):
+        """Returns users' budgets
+
+        Args:
+            user: string, users' username
+        
+        returns:
+            list of budgets
+        """
         budgets = []
         d_b = self.connection.cursor()
         d_b.execute("select * from budgets where user = ?", (user,))
@@ -42,8 +63,13 @@ class BudgetingRepository:
         # loppuu
     
     def delete_budget(self, budget_id):
+        """Deletes spesific budget
+
+        Args:
+            budget_id: specific budgets id
+        """
         d_b = self.connection.cursor()
-        d_b.execute("delete from budgets where id = ?", (budget_id,))
+        d_b.execute("delete from budgets where id = ?", (str(budget_id),))
         self.connection.commit()
 
 budget_repository = BudgetingRepository(get_database_connection())
