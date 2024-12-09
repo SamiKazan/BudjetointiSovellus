@@ -27,7 +27,7 @@ def create_tables(connection):
             name TEXT,
             income REAL,
             rent REAL,
-            groceries REAL,
+            bills REAL,
             hobbies REAL,
             misc REAL
         );

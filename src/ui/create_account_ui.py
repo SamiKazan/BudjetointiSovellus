@@ -1,4 +1,4 @@
-from tkinter import ttk, StringVar, constants
+from tkinter import ttk, constants
 from services.main_service import budgeting_service
 
 

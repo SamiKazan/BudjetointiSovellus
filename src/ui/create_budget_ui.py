@@ -1,4 +1,4 @@
-from tkinter import ttk, StringVar, constants
+from tkinter import ttk, constants
 from services.main_service import budgeting_service
 
 
@@ -10,7 +10,7 @@ class CreateBudgetUI:
         self.enter_name = None
         self.enter_income = None
         self.enter_rent = None
-        self.enter_groceries = None
+        self.enter_bills = None
         self.enter_hobbies = None
         self.enter_misc = None
 
@@ -24,17 +24,17 @@ class CreateBudgetUI:
 
     def create_budget_handler(self):
         name = str(self.enter_name.get())
-        income = int(self.enter_income.get())
-        rent = int(self.enter_rent.get())
-        groceries = int(self.enter_groceries.get())
-        hobbies = int(self.enter_hobbies.get())
-        misc = int(self.enter_misc.get())
+        income = float(self.enter_income.get())
+        rent = float(self.enter_rent.get())
+        bills = float(self.enter_bills.get())
+        hobbies = float(self.enter_hobbies.get())
+        misc = float(self.enter_misc.get())
 
         content = {
             "name": name,
             "income": income,
             "rent": rent,
-            "groceries": groceries,
+            "bills": bills,
             "hobbies": hobbies,
             "misc": misc
         }
@@ -62,11 +62,11 @@ class CreateBudgetUI:
         label.grid(padx=5, pady=5, sticky=constants.W)
         self.enter_rent.grid(padx=5, pady=5, sticky=constants.EW)
 
-    def groceries_input(self):
-        label = ttk.Label(master=self.frame, text="Groceries")
-        self.enter_groceries = ttk.Entry(master=self.frame)
+    def bills_input(self):
+        label = ttk.Label(master=self.frame, text="Bills")
+        self.enter_bills = ttk.Entry(master=self.frame)
         label.grid(padx=5, pady=5, sticky=constants.W)
-        self.enter_groceries.grid(padx=5, pady=5, sticky=constants.EW)
+        self.enter_bills.grid(padx=5, pady=5, sticky=constants.EW)
 
     def hobbies_input(self):
         label = ttk.Label(master=self.frame, text="Hobbies")
@@ -87,7 +87,7 @@ class CreateBudgetUI:
         self.name_input()
         self.income_input()
         self.rent_input()
-        self.groceries_input()
+        self.bills_input()
         self.hobbies_input()
         self.misc_input()
 

@@ -56,7 +56,7 @@ class BudgetingService:
 
         budget = self.budget_repo.create_budget(Budgets(self.user.username, content["name"],
                                                         content["income"], content["rent"],
-                                                        content["groceries"], content["hobbies"],
+                                                        content["bills"], content["hobbies"],
                                                         content["misc"]))
 
         print("Budget created (Main)")
@@ -77,6 +77,12 @@ class BudgetingService:
         
         self.budget_repo.delete_budget(budget_id)
         print("deleted success")
+
+    def show_difference(self, budget):
+        expenses = budget.rent + budget.bills + budget.hobbies + budget.misc
+        difference = budget.income - expenses
+
+        return difference
 
 
 budgeting_service = BudgetingService()

@@ -5,7 +5,6 @@ from database_connection import get_database_connection
 def get_user_by_row(row):
     return Users(row["username"], row["password"]) if row else None
 
-
 class UserRepository:
     def __init__(self, connection):
         self.connection = connection

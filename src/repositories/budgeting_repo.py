@@ -11,11 +11,11 @@ class BudgetingRepository:
 
         d_b.execute("""
             insert into budgets
-                    (id, user, name, income, rent, groceries, hobbies, misc)
+                    (id, user, name, income, rent, bills, hobbies, misc)
             values (?, ?, ?, ?, ?, ?, ?, ?)
             """,
                     (str(budget.id), budget.user, budget.name, budget.income,
-                     budget.rent, budget.groceries, budget.hobbies, budget.misc)
+                     budget.rent, budget.bills, budget.hobbies, budget.misc)
                     )
         self.connection.commit()
 
@@ -32,7 +32,7 @@ class BudgetingRepository:
                 name=row["name"],
                 income=row["income"],
                 rent=row["rent"],
-                groceries=row["groceries"],
+                bills=row["bills"],
                 hobbies=row["hobbies"],
                 misc=row["misc"]
             )

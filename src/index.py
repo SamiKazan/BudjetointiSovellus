@@ -1,8 +1,8 @@
 from tkinter import Tk
 from ui.ui import UI
 
-# VIIKKO 6 error messaget, poista budgetti, docstring
-# näkee budgetin kaikki tiedot(uusi ikkuna), laskee paljon jäljellä
+# VIIKKO 6 docstring, sekvenssikaavio
+# VIIKKO 7 error messaget, tietoturva/salaus, difference värinvaihto, loput
 
 def main():
     window = Tk()
