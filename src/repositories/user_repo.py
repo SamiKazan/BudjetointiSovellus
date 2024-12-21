@@ -15,7 +15,7 @@ class UserRepository:
         ARGS:
             connection: Connection to databse
         """
-        self.connection = connection
+        self._connection = connection
 
     def create_account(self, user):
         """Creates new user account
@@ -26,12 +26,12 @@ class UserRepository:
         returns:
             user
         """
-        d_b = self.connection.cursor()
+        d_b = self._connection.cursor()
 
         d_b.execute("insert into users (username, password) values (?,?)",
                     (user.username, user.password))
 
-        self.connection.commit()
+        self._connection.commit()
         print("user", user.username, "created to DB")
         return user
 
@@ -41,20 +41,20 @@ class UserRepository:
         Args:
             username: string, users' username
         """
-        d_b = self.connection.cursor()
+        d_b = self._connection.cursor()
 
         d_b.execute("delete from users where username = ?", (username,))
 
-        self.connection.commit()
+        self._connection.commit()
 
     def delete_all_accounts(self):
         """Deletes all accounts
         """
-        d_b = self.connection.cursor()
+        d_b = self._connection.cursor()
 
         d_b.execute("delete from users")
 
-        self.connection.commit()
+        self._connection.commit()
 
     def find(self, username):
         """Finds specific user
@@ -65,7 +65,7 @@ class UserRepository:
         returns:
             user: username and password
         """
-        d_b = self.connection.cursor()
+        d_b = self._connection.cursor()
 
         d_b.execute(
             "select * from users where username = ?",

@@ -9,6 +9,6 @@
 | 28.11 | 6    | budget_repo, budget_ui, create_budget_ui
 |  2.12 | 4    | budget_repo testit, pakkauskaavio
 |  9.12 | 7    | login sekvenssikaavio, budget_details näkymä, bugfix, delete_budget
+| 21.12 | 6    | error messaget, loput testit
 |       | -    | 
-|       | -    | 
-| yht   | 32   | | 
+| yht   | 38   | | 

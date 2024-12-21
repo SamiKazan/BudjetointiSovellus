@@ -11,37 +11,37 @@ class UI:
         self.current_page = None
 
     def start(self):
-        self.show_login_page()
+        self._show_login_page()
 
-    def hide_current_page(self):
+    def _hide_current_page(self):
         if self.current_page:
             self.current_page.close()
         self.current_page = None
 
-    def show_login_page(self):
-        self.hide_current_page()
+    def _show_login_page(self):
+        self._hide_current_page()
         self.current_page = LoginUI(
-            self.root, self.show_budgeting_page, self.show_create_account_page)
+            self.root, self._show_budgeting_page, self._show_create_account_page)
         self.current_page.show()
 
-    def show_create_account_page(self):
-        self.hide_current_page()
+    def _show_create_account_page(self):
+        self._hide_current_page()
         self.current_page = CreateaccountUI(
-            self.root, self.show_budgeting_page, self.show_login_page)
+            self.root, self._show_budgeting_page, self._show_login_page)
         self.current_page.show()
 
-    def show_budgeting_page(self):
-        self.hide_current_page()
+    def _show_budgeting_page(self):
+        self._hide_current_page()
         self.current_page = BudgetingUI(
-            self.root, self.show_login_page, self.show_create_budget_page, self.show_view_deails_page)
+            self.root, self._show_login_page, self._show_create_budget_page, self._show_view_deails_page)
         self.current_page.show()
 
-    def show_create_budget_page(self):
-        self.hide_current_page()
-        self.current_page = CreateBudgetUI(self.root, self.show_budgeting_page)
+    def _show_create_budget_page(self):
+        self._hide_current_page()
+        self.current_page = CreateBudgetUI(self.root, self._show_budgeting_page)
         self.current_page.show()
 
-    def show_view_deails_page(self, budget):
-        self.hide_current_page()
-        self.current_page = ViewBudgetDetailsUI(self.root, budget, self.show_budgeting_page)
+    def _show_view_deails_page(self, budget):
+        self._hide_current_page()
+        self.current_page = ViewBudgetDetailsUI(self.root, budget, self._show_budgeting_page)
         self.current_page.show()

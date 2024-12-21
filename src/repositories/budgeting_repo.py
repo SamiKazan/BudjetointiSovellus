@@ -10,9 +10,9 @@ class BudgetingRepository:
         """Class constructor
 
         ARGS:
-            connection: Connection to databse
+            _connection: Connection to databse
         """
-        self.connection = connection
+        self._connection = connection
 
     def create_budget(self, budget):
         """Creates new budget for user
@@ -20,7 +20,7 @@ class BudgetingRepository:
         Args:
             budget: An instance of the Budget class containing the budget details.
         """
-        d_b = self.connection.cursor()
+        d_b = self._connection.cursor()
 
         d_b.execute("""
             insert into budgets
@@ -30,7 +30,7 @@ class BudgetingRepository:
                     (str(budget.id), budget.user, budget.name, budget.income,
                      budget.rent, budget.bills, budget.hobbies, budget.misc)
                     )
-        self.connection.commit()
+        self._connection.commit()
 
     def find_budgets(self, user):
         """Returns users' budgets
@@ -42,7 +42,7 @@ class BudgetingRepository:
             list of budgets
         """
         budgets = []
-        d_b = self.connection.cursor()
+        d_b = self._connection.cursor()
         d_b.execute("select * from budgets where user = ?", (user,))
 
         # github copilot auttoi tässä
@@ -68,8 +68,8 @@ class BudgetingRepository:
         Args:
             budget_id: specific budgets id
         """
-        d_b = self.connection.cursor()
+        d_b = self._connection.cursor()
         d_b.execute("delete from budgets where id = ?", (str(budget_id),))
-        self.connection.commit()
+        self._connection.commit()
 
 budget_repository = BudgetingRepository(get_database_connection())

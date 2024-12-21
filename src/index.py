@@ -1,7 +1,7 @@
 from tkinter import Tk
 from ui.ui import UI
 
-# VIIKKO 7 error messaget, tietoturva/salaus, loput testit
+# VIIKKO 7 testi dokumentaatio, loput dokumentaatio, releasin tekeminen, tarkista kriteerit, palautelomakkeet moodlessa
 
 def main():
     window = Tk()

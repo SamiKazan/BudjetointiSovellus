@@ -22,7 +22,7 @@ class BudgetingService:
                 BudgetRepository object.
                 object has Budgetpository classes methods
         """
-        self.user = None
+        self._user = None
         self.user_repo = user_repo
         self.budget_repo = budget_repo
 
@@ -33,20 +33,18 @@ class BudgetingService:
             username: string, users' username
             password: string, users' password
         Returns:
-            user if successs
+            _user if successs
             None if username is already taken
         """
         user_exists = self.user_repo.find(username)
 
         if user_exists:
-            print("Username already in use (Main)")
             return None
             
         user = self.user_repo.create_account(Users(username, password))
 
-        self.user = user
+        self._user = user
 
-        print("User created (Main)")
         return user
 
     def login(self, username, password):
@@ -56,7 +54,7 @@ class BudgetingService:
             username: string, users' username
             password: string, users' password
         Returns:
-            Logged in user object
+            Logged in _user object
         Raises:
             todo...
         """
@@ -64,17 +62,15 @@ class BudgetingService:
         user = self.user_repo.find(username)
 
         if not user or password != user.password:
-            print("invalid username or password (Main)")
             return None
 
-        self.user = user
-        print("Logged in as", self.user.username, "(Main)")
+        self._user = user
         return user
 
     def logout(self):
         """Logs user out
         """
-        self.user = None
+        self._user = None
 
     def create_budget(self, content):
         """Creates new budget
@@ -86,16 +82,13 @@ class BudgetingService:
         Raises:
             todo...
         """
-        if not self.user:
-            print("No user logged in")
+        if not self._user:
             return None
 
-        budget = self.budget_repo.create_budget(Budgets(self.user.username, content["name"],
+        budget = self.budget_repo.create_budget(Budgets(self._user.username, content["name"],
                                                         content["income"], content["rent"],
                                                         content["bills"], content["hobbies"],
                                                         content["misc"]))
-
-        print("Budget created (Main)")
         return budget
 
     def get_budgets(self):
@@ -104,10 +97,10 @@ class BudgetingService:
         Returns:
             list of budgets in Budgets class form
         """
-        if not self.user:
+        if not self._user:
             return []
 
-        budgets = self.budget_repo.find_budgets(self.user.username)
+        budgets = self.budget_repo.find_budgets(self._user.username)
 
         return list(budgets)
     
@@ -119,11 +112,10 @@ class BudgetingService:
         Raises:
             todo...
         """        
-        if not self.user:
+        if not self._user:
             return
         
         self.budget_repo.delete_budget(budget_id)
-        print("deletion successful")
 
     def show_difference(self, budget):
         """Shows income after expenses
@@ -137,6 +129,11 @@ class BudgetingService:
         difference = float(budget.income - expenses)
 
         return difference
+    
+    def get_user(self):
+        if not self._user:
+            return
+        return self._user.username
 
 
 budgeting_service = BudgetingService()
