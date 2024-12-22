@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa projektin viimeisimmän -releasen- lähdekoodi.
+Lataa projektin viimeisimmän [releasen](https://github.com/SamiKazan/Ohjelmistotekniikka/releases/tag/Loppupalautus) lähdekoodi valitsemalla Source code.
 
 ## Ohjelman käynnistäminen
 
