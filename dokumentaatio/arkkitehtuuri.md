@@ -37,7 +37,6 @@ Sovelluksen loogisen tietomallin muodostavat luokat Budgetingservice ja User, jo
       class Budgetingapp{
           id
           budget
-          expenses
       }
 ```
 
@@ -58,49 +57,67 @@ Budgetit ja käyttäjät tallennetaan SQLite-tietokannan tauluihin budgets ja us
 
 ## Päätoiminnot
 
-Seuraavat sekvenssikaaviot kuvaavat sovelluksen logiikan osalta toiminnallisuudelta.
+Seuraavat sekvenssikaaviot kuvaavat osan sovelluksen logiikan toiminnallisuudelta.
 
 
-# Sisäänkirjautumisen sekvenssikaavio
-
-```mermaid
-sequenceDiagram
-  participant User
-  participant UI
-  participant BudgetService
-  participant UserRepository
-
-  User->>UI: click login
-  UI->>BudgetService: login("asd", "asd123")
-  BudgetService->>UserRepository: find("asd")
-  UserRepository-->>BudgetService: User
-  BudgetService-->>UI: User
-  UI->UI: show_budgeting_page()
-```
-
-# Budgtin luomisen sekvenssikaavio
+### Sisäänkirjautumisen sekvenssikaavio
+Sovellus etenee seuraavasti, kun syötetään käyttäjätunnus ja salasana sekä painetaan Login:
 
 ```mermaid
 sequenceDiagram
-  participant User
-  participant UI
-  participant BudgetService
-  participant UserRepository
-
-
+    participant User
+    participant UI
+    participant BudgetingService
+    participant UserRepository
+    
+    User->>UI: click login
+    UI->>BudgetingService: login("asd", "asd123")
+    BudgetingService->>UserRepository: find("asd")
+    UserRepository-->>BudgetingService: User
+    BudgetingService-->>UI: User
+    UI->UI: show_budgeting_page()
 ```
 
-# Budgetin poiston sekvenssikaavio
+### Budgtin luomisen sekvenssikaavio
 
 ```mermaid
 sequenceDiagram
-  participant User
-  participant UI
-  participant BudgetService
-  participant UserRepository
+    participant User
+    participant UI
+    participant BudgetingService
+    participant BudgetingRepository
 
-
+    User ->>UI: click Create new budget
+    UI -->>User: opens create new budget page
+    User ->>UI: user enters content, click Create Budget
+    UI ->>BudgetingService: create_budget(content)
+    BudgetingService ->>BudgetingRepository: create_budget(content)
+    BudgetingRepository ->BudgetingRepository: id for budget
+    BudgetingRepository -->>BudgetingService: 
+    BudgetingService -->>UI: 
+    UI->UI: show_budgeting_page()
 ```
+
+### Budgetin poiston sekvenssikaavio
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant UI
+    participant BudgetingService
+    participant BudgetingRepository
+
+    User ->>UI: click Delete
+    UI ->>BudgetingService: delete_budget(budget_id)
+    BudgetingService ->>BudgetingRepository: delete_budget(budget_id)
+    BudgetingRepository ->BudgetingRepository: delete budget from DB
+    BudgetingRepository -->>BudgetingService: 
+    BudgetingService -->>UI: 
+    UI->UI: show_budgeting_page()
+```
+
+### Muut toiminnot
+Sovellus toteuttaa muut toiminnot suunnilleen samalla tavalla, jossa käyttöliittymä kutsuu BudgetingServiceä oikealla metodilla, joka sitten kutsuu Budgeting- tai UserRepositorya. Toiminto palaa taas lopulta käyttöliittymään tarvittavilla tiedoilla päivitetyllä näkymällä.
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
   - Ohjelman käyttöliittymien metodit message ovat samat jokaisessa, joten siitä olisi voinut tehdä oma luokkansa.
