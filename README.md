@@ -12,11 +12,13 @@
 
 [Arkkitehtuurikuvaus](https://github.com/SamiKazan/Ohjelmistotekniikka/blob/master/dokumentaatio/arkkitehtuuri.md)
 
-[changelog](https://github.com/SamiKazan/Ohjelmistotekniikka/blob/master/dokumentaatio/changelog.md)
+[Changelog](https://github.com/SamiKazan/Ohjelmistotekniikka/blob/master/dokumentaatio/changelog.md)
 
+[Käyttöohje](https://github.com/SamiKazan/Ohjelmistotekniikka/blob/master/dokumentaatio/kayttoohje.md)
+
+[Testausdokumentaatio](https://github.com/SamiKazan/Ohjelmistotekniikka/blob/master/dokumentaatio/testaus.md)
 
 ## Asennus
-
 
 1. Asenna riippuvuudet terminaalikomennolla:
 
