@@ -6,6 +6,7 @@ class BudgetingRepository:
     """
     Class for database related budget to operations
     """
+
     def __init__(self, connection):
         """Class constructor
 
@@ -37,7 +38,7 @@ class BudgetingRepository:
 
         Args:
             user: string, users' username
-        
+
         returns:
             list of budgets
         """
@@ -61,7 +62,7 @@ class BudgetingRepository:
             budgets.append(budget)
         return budgets
         # loppuu
-    
+
     def delete_budget(self, budget_id):
         """Deletes spesific budget
 
@@ -71,5 +72,7 @@ class BudgetingRepository:
         d_b = self._connection.cursor()
         d_b.execute("delete from budgets where id = ?", (str(budget_id),))
         self._connection.commit()
+        return
+
 
 budget_repository = BudgetingRepository(get_database_connection())

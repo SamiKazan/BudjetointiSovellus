@@ -52,7 +52,7 @@ class TestBudgetservice(unittest.TestCase):
             "hobbies": 100,
             "misc": 100
         }
-  
+
         no_user = budgeting_service.create_budget(content)
         self.assertEqual(no_user, None)
 
@@ -66,7 +66,7 @@ class TestBudgetservice(unittest.TestCase):
             "hobbies": 100,
             "misc": 100
         }
-  
+
         no_user = budgeting_service.create_budget(content)
         self.assertEqual(no_user, None)
 
@@ -121,7 +121,6 @@ class TestBudgetservice(unittest.TestCase):
         difference = budgeting_service.show_difference(first)
 
         self.assertEqual(difference, 100.0)
-        
 
     def test_get_user(self):
         budgeting_service.login("testi100", "testi100")

@@ -5,6 +5,7 @@ from services.main_service import budgeting_service
 class LoginUI:
     """user interface for logging in
     """
+
     def __init__(self, root, handle_login, handle_show_create_account_UI):
         """Class construcotr creats login page
 
@@ -38,7 +39,7 @@ class LoginUI:
         password = self._enter_password.get()
 
         user = budgeting_service.login(username, password)
-        
+
         if user != None:
             self._handle_login()
         else:

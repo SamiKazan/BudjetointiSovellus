@@ -10,5 +10,5 @@
 |  2.12 | 4    | budget_repo testit, pakkauskaavio
 |  9.12 | 7    | login sekvenssikaavio, budget_details näkymä, bugfix, delete_budget
 | 21.12 | 6    | error messaget, loput testit
-|       | -    | 
+| 22.12 | -    | dokumentaation viimeistely
 | yht   | 38   | | 

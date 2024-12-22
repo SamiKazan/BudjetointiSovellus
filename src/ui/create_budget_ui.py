@@ -4,6 +4,7 @@ from services.main_service import budgeting_service
 
 class CreateBudgetUI:
     """user interface for budget creation page"""
+
     def __init__(self, root, handle_create_budget):
         """Class constructor, creates newbudget page
 
@@ -37,7 +38,7 @@ class CreateBudgetUI:
         if self._enter_name.get() == '':
             self.show_message("Enter title for budget")
             return
-        
+
         name = str(self._enter_name.get())
         try:
             income = float(self._enter_income.get() or 0)
@@ -46,9 +47,10 @@ class CreateBudgetUI:
             hobbies = float(self._enter_hobbies.get() or 0)
             misc = float(self._enter_misc.get() or 0)
         except:
-            self.show_message("Income must be a number or use a dot for decimal numbers")
+            self.show_message(
+                "Income must be a number or use a dot for decimal numbers")
             return
-        
+
         content = {
             "name": name,
             "income": income,

@@ -5,6 +5,7 @@ from services.main_service import budgeting_service
 class CreateaccountUI:
     """user interface for account creation
     """
+
     def __init__(self, root, handle_create_user, handle_show_login_UI):
         """Class constructor, creates account creation page.
 
@@ -84,7 +85,7 @@ class CreateaccountUI:
         self._message_label.grid(padx=5, pady=5)
 
         create_user_button = ttk.Button(master=self._frame, text="Create user",
-                                        command= self.creation_handler)
+                                        command=self.creation_handler)
         create_user_button.grid(padx=5, pady=5, sticky=constants.EW)
 
         cancel_button = ttk.Button(master=self._frame, text="Cancel",

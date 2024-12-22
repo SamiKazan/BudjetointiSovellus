@@ -26,3 +26,11 @@
 - Budgetin poisto testi
 - docstring
 - sekvenssikaavio
+
+## Viikko 7
+- Testien viimeistely
+- Error messaget
+- Testi dokumentaatio
+- Arkkitehtuuri dokumentaatio
+- Vaatimusmäärittelyn viimeistely
+- Käyttöohjeen luonti

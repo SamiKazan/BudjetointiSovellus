@@ -13,7 +13,7 @@ class BudgetingService:
             user_repo=user_repository,
             budget_repo=budget_repository):
         """Class constructor. creates instance of applogic
-  
+
         Args:
             user_repo:
                 UserRepository object.
@@ -40,7 +40,7 @@ class BudgetingService:
 
         if user_exists:
             return None
-            
+
         user = self.user_repo.create_account(Users(username, password))
 
         self._user = user
@@ -89,11 +89,11 @@ class BudgetingService:
                                                         content["income"], content["rent"],
                                                         content["bills"], content["hobbies"],
                                                         content["misc"]))
-        return budget
+        return
 
     def get_budgets(self):
         """Gets users' budgets
-        
+
         Returns:
             list of budgets in Budgets class form
         """
@@ -103,7 +103,7 @@ class BudgetingService:
         budgets = self.budget_repo.find_budgets(self._user.username)
 
         return list(budgets)
-    
+
     def delete_budget(self, budget_id):
         """Deletes budget
 
@@ -111,11 +111,12 @@ class BudgetingService:
             budget_id: string(uuid), id of specific budget
         Raises:
             todo...
-        """        
+        """
         if not self._user:
             return
-        
+
         self.budget_repo.delete_budget(budget_id)
+        return
 
     def show_difference(self, budget):
         """Shows income after expenses
@@ -129,7 +130,7 @@ class BudgetingService:
         difference = float(budget.income - expenses)
 
         return difference
-    
+
     def get_user(self):
         if not self._user:
             return

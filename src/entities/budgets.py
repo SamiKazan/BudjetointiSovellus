@@ -1,5 +1,6 @@
 import uuid
 
+
 class Budgets:
     """Class, that defines a budget
 
@@ -13,6 +14,7 @@ class Budgets:
         hobbies: float, monthly hobbies expenses
         misc: float, miscellaneous monthly expenses
     """
+
     def __init__(self, user, name, income, rent, bills, hobbies, misc):
         """Class constructor, that creates a new budget.
 

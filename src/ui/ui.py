@@ -38,10 +38,12 @@ class UI:
 
     def _show_create_budget_page(self):
         self._hide_current_page()
-        self.current_page = CreateBudgetUI(self.root, self._show_budgeting_page)
+        self.current_page = CreateBudgetUI(
+            self.root, self._show_budgeting_page)
         self.current_page.show()
 
     def _show_view_deails_page(self, budget):
         self._hide_current_page()
-        self.current_page = ViewBudgetDetailsUI(self.root, budget, self._show_budgeting_page)
+        self.current_page = ViewBudgetDetailsUI(
+            self.root, budget, self._show_budgeting_page)
         self.current_page.show()

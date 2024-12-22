@@ -5,10 +5,12 @@ from database_connection import get_database_connection
 def get_user_by_row(row):
     return Users(row["username"], row["password"]) if row else None
 
+
 class UserRepository:
     """
     Class for database related to user operations
     """
+
     def __init__(self, connection):
         """Class constructor
 
@@ -32,7 +34,6 @@ class UserRepository:
                     (user.username, user.password))
 
         self._connection.commit()
-        print("user", user.username, "created to DB")
         return user
 
     def delete_account(self, username):
