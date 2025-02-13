@@ -1,5 +1,5 @@
 
-##Budjetointisovellus
+# Budjetointisovellus
 
 <p>Budjetointisovelluksessa luodaan budjetteja. Budjetin luodessa asetetaan tulot ja kaikki menot lajiteltuna(laskut, harrastukset, yms), josta sitten näkee paljon kulujen jälkeen jää käyttörahaa.</p>  
 
