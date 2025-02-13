@@ -1,6 +1,5 @@
-# Ohjelmistotekniikka, harjoitustyö
 
-<p><b>Harjoitustyö:</b> <i>Budjetointisovellus</i></p>  
+<p><i>Budjetointisovellus</i></p>  
 
 <p>Budjetointisovelluksessa luodaan budjetteja. Budjetin luodessa asetetaan tulot ja kaikki menot lajiteltuna(laskut, harrastukset, yms), josta sitten näkee paljon kulujen jälkeen jää käyttörahaa.</p>  
 
